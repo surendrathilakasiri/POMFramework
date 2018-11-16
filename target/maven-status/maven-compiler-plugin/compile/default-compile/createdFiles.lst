@@ -1,0 +1,4 @@
+testSuites\TestBase.class
+common\BrowserUtil2.class
+common\BrowserUtil.class
+testSuites\TS_SmokeTest.class

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="12314" started-at="2018-11-16T20:09:17Z" finished-at="2018-11-16T20:09:29Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="12314" started-at="2018-11-16T20:09:17Z" finished-at="2018-11-16T20:09:29Z">
+      <class name="testSuites.TS_SmokeTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testSuites.TS_SmokeTest@5d5eef3d]" name="setup" is-config="true" duration-ms="7611" started-at="2018-11-16T15:09:17Z" finished-at="2018-11-16T15:09:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="tc_LoginTest()[pri:0, instance:testSuites.TS_SmokeTest@5d5eef3d]" name="tc_LoginTest" duration-ms="4692" started-at="2018-11-16T15:09:24Z" finished-at="2018-11-16T15:09:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_LoginTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testSuites.TS_SmokeTest@5d5eef3d]" name="teardown" is-config="true" duration-ms="1" started-at="2018-11-16T15:09:29Z" finished-at="2018-11-16T15:09:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testSuites.TS_SmokeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
