@@ -6,6 +6,7 @@
       <class name="testSuites.TS_SmokeTest">
         <methods>
           <include name="tc_LoginTest"/>
+          <include name="teardown"/>
           <include name="setup"/>
         </methods>
       </class> <!-- testSuites.TS_SmokeTest -->
