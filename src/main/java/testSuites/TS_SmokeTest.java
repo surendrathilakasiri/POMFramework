@@ -1,20 +1,24 @@
 package testSuites;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import com.BussinessComponents.bc_OKTALogin;
 import common.BrowserUtil;
-import common.BrowserUtil2;
 
 public class TS_SmokeTest extends TestBase {
-//public WebDriver driver;
-	
+	// public WebDriver driver;
+	private String username = new String("Loadt01");
+	private String password = new String("Global01");
+	private String URL = new String("https://aenetworks.oktapreview.com/login/default");
+
 	@Test
 	public void tc_LoginTest() {
+		// Open the browser with provided URL
 		BrowserUtil browser = new BrowserUtil(driver);
-		browser.openURL1("https://aenetworks.oktapreview.com/login/default");
-		//driver.get("https://www.google.com");
-		//BrowserUtil2 browser2 = new BrowserUtil2(driver);
-		//browser2.LoginOKTA("loadt01", "Global01");
+		browser.openURL(URL);
+
+		// Sign Into OKTA Home Page
+		bc_OKTALogin oKTALogin = new bc_OKTALogin(driver);
+		oKTALogin.LoginOKTA(username, password);
 		System.out.println("Test 1");
 	}
 
