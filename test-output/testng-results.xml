@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="77210" started-at="2018-11-21T18:47:48Z" finished-at="2018-11-21T18:49:05Z">
+  <suite name="Default suite" duration-ms="34594" started-at="2018-11-27T19:50:54Z" finished-at="2018-11-27T19:51:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="77210" started-at="2018-11-21T18:47:48Z" finished-at="2018-11-21T18:49:05Z">
+    <test name="Default test" duration-ms="34594" started-at="2018-11-27T19:50:54Z" finished-at="2018-11-27T19:51:29Z">
       <class name="testSuites.TS_SmokeTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testSuites.TS_SmokeTest@56f4468b]" name="setup" is-config="true" duration-ms="10184" started-at="2018-11-21T13:47:48Z" finished-at="2018-11-21T13:47:58Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testSuites.TS_SmokeTest@56f4468b]" name="setup" is-config="true" duration-ms="4651" started-at="2018-11-27T14:50:54Z" finished-at="2018-11-27T14:50:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="tc_LoginTest()[pri:0, instance:testSuites.TS_SmokeTest@56f4468b]" name="tc_LoginTest" duration-ms="67003" started-at="2018-11-21T13:47:58Z" finished-at="2018-11-21T13:49:05Z">
+        <test-method status="PASS" signature="tc_LoginTest()[pri:0, instance:testSuites.TS_SmokeTest@56f4468b]" name="tc_LoginTest" duration-ms="28234" started-at="2018-11-27T14:50:59Z" finished-at="2018-11-27T14:51:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_LoginTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testSuites.TS_SmokeTest@56f4468b]" name="teardown" is-config="true" duration-ms="0" started-at="2018-11-21T13:49:05Z" finished-at="2018-11-21T13:49:05Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testSuites.TS_SmokeTest@56f4468b]" name="teardown" is-config="true" duration-ms="1691" started-at="2018-11-27T14:51:27Z" finished-at="2018-11-27T14:51:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

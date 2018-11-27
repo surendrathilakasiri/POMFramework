@@ -5,6 +5,7 @@ package com.BussinessComponents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 /**
@@ -20,10 +21,13 @@ public class bc_OpenApp {
 		this.driver = driver;
 	}
 
-	public void openApp(String appName) {
+	public void openApp(String appName) throws Exception {
 		if (appName.compareToIgnoreCase("Bridge-QA2") == 0) {
 			driver.findElement(app).click();
-			// Assert.
+			//WebDriverWait wait=new WebDriverWait(driver,10);
+			//wait.wait();
+			Thread.sleep(5000);
+			
 			System.out.println("Bridge QA2 is Loading...");
 			for (String winHandle : driver.getWindowHandles()) { // Gets the new
 																	// window

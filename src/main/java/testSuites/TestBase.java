@@ -30,5 +30,7 @@ public class TestBase {
 	@AfterTest
 	public void teardown() {
 		System.out.println("Test Case is Completed");
+		driver.quit();
+		
 	}
 }

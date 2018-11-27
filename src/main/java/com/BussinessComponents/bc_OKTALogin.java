@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import com.thoughtworks.selenium.Wait;
+
 /**
  * @author Surendra T
  * THis is used to Login to OKTA Home Page
@@ -34,6 +36,7 @@ private By signIn =By.xpath("//*[@id=\"okta-signin-submit\"]");
 		System.out.println(title1);
 		Assert.assertEquals(title1, "AE Networks - Preview - Sign In");
 		driver.findElement(By.xpath("//*[@class='logo']")).click();
+		
 
 	}
 

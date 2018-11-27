@@ -12,7 +12,7 @@ public class TS_SmokeTest extends TestBase {
 	private String appName=new String("Bridge-QA2");
 
 	@Test
-	public void tc_LoginTest() {
+	public void tc_LoginTest() throws Exception {
 		// Open the browser with provided URL
 		BrowserUtil browser = new BrowserUtil(driver);
 		browser.openURL(URL);
@@ -24,6 +24,11 @@ public class TS_SmokeTest extends TestBase {
 		// Launch Bridge QA1 app
 		bc_OpenApp openApp=new bc_OpenApp(driver);
 		openApp.openApp(appName);
+		
+		//Select a sub Menu
+		bc_SelectSubMenu selectMenu=new bc_SelectSubMenu(driver);
+		selectMenu.selectMenu();
+		
 
 	}
 	
