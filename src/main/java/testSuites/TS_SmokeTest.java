@@ -27,7 +27,7 @@ public class TS_SmokeTest extends TestBase {
 		
 		//Select a sub Menu
 		bc_SelectSubMenu selectMenu=new bc_SelectSubMenu(driver);
-		selectMenu.selectMenu();
+		selectMenu.selectMenu("Sales Operations","Account Maintenance");
 		
 
 	}
