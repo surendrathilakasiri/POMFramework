@@ -19,7 +19,7 @@ public class bc_SelectSubMenu {
 		this.driver = driver;
 	}
 
-	public void selectMenu(String mMenu, String sMenu) {
+	public void selectMenu(String mMenu, String sMenu) throws InterruptedException {
 		mainMenu = By.xpath("//*[contains(text(),'" + mMenu.toString() + "')]");
 		System.out.println(mainMenu.toString());
 		subMenu = By.xpath("//a[contains(text(),'" + sMenu.toString() + "')]");
@@ -27,7 +27,7 @@ public class bc_SelectSubMenu {
 		driver.findElement(menu).click();
 		driver.findElement(mainMenu).click();
 		driver.findElement(subMenu).click();
-		Assert.assertEquals(driver.getTitle(), "Account Maintenance", "Validate Page Load");
+		Assert.assertEquals(driver.getTitle(), sMenu.toString(), " Validate Page Load");
 		System.out.println(driver.getTitle() + " page is Loaded..");
 	}
 

@@ -5,8 +5,9 @@
     <classes>
       <class name="testSuites.TS_SmokeTest">
         <methods>
-          <include name="tc_LoginTest"/>
+          <include name="tc_SalesProjections"/>
           <include name="teardown"/>
+          <include name="closetab"/>
           <include name="setup"/>
         </methods>
       </class> <!-- testSuites.TS_SmokeTest -->

@@ -25,13 +25,46 @@ public class TS_SmokeTest extends TestBase {
 		bc_OpenApp openApp=new bc_OpenApp(driver);
 		openApp.openApp(appName);
 		
+	}
+	
+
+	@Test
+	public void tc_AccountMaintenance() throws Exception {
+		// Open the browser with provided URL
+		BrowserUtil browser = new BrowserUtil(driver);
+		browser.openURL(URL);
+
+		// Sign Into OKTA Home Page
+		bc_OKTALogin oKTALogin = new bc_OKTALogin(driver);
+		oKTALogin.LoginOKTA(username, password);
+		
+		// Launch Bridge QA1 app
+		bc_OpenApp openApp=new bc_OpenApp(driver);
+		openApp.openApp(appName);
+		
 		//Select a sub Menu
 		bc_SelectSubMenu selectMenu=new bc_SelectSubMenu(driver);
 		selectMenu.selectMenu("Sales Operations","Account Maintenance");
 		
-
 	}
 	
-	
+	@Test
+	public void tc_SalesProjections() throws Exception {
+		// Open the browser with provided URL
+		BrowserUtil browser = new BrowserUtil(driver);
+		browser.openURL(URL);
 
+		// Sign Into OKTA Home Page
+		bc_OKTALogin oKTALogin = new bc_OKTALogin(driver);
+		oKTALogin.LoginOKTA(username, password);
+		
+		// Launch Bridge QA1 app
+		bc_OpenApp openApp=new bc_OpenApp(driver);
+		openApp.openApp(appName);
+		
+		//Select a sub Menu
+		bc_SelectSubMenu selectMenu=new bc_SelectSubMenu(driver);
+		selectMenu.selectMenu("Sales","Projections");
+		
+	}
 }
