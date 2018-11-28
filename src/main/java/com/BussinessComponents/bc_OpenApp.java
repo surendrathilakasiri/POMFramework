@@ -26,7 +26,7 @@ public class bc_OpenApp {
 			driver.findElement(app).click();
 			//WebDriverWait wait=new WebDriverWait(driver,10);
 			//wait.wait();
-			Thread.sleep(5000);
+			Thread.sleep(8000);
 			
 			System.out.println("Bridge QA2 is Loading...");
 			for (String winHandle : driver.getWindowHandles()) { // Gets the new

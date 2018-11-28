@@ -30,16 +30,16 @@ public class TestBase {
 
 	@AfterMethod
 	public void closetab() {
-		//driver.close();
-		//for (String winHandle : driver.getWindowHandles()) {
-		//	driver.switchTo().window(winHandle);
-		//}
+		driver.close();
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
 	}
 
 	@AfterTest
 	public void teardown() {
 		System.out.println("Test Case is Completed");
-		//driver.quit();
+		driver.quit();
 
 	}
 }

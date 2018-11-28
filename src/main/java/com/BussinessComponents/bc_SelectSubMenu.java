@@ -19,13 +19,29 @@ public class bc_SelectSubMenu {
 		this.driver = driver;
 	}
 
-	public void selectMenu(String mMenu, String sMenu) throws InterruptedException {
+	public void selectMenu(String mMenu, String sMenu, int index) throws InterruptedException {
 		mainMenu = By.xpath("//*[contains(text(),'" + mMenu.toString() + "')]");
-		System.out.println(mainMenu.toString());
 		subMenu = By.xpath("//a[contains(text(),'" + sMenu.toString() + "')]");
 
 		driver.findElement(menu).click();
+		System.out.println(mainMenu.toString());
+		driver.findElements(mainMenu).get(index).click();
+		System.out.println(subMenu.toString());
+		driver.findElement(subMenu).click();
+		Assert.assertEquals(driver.getTitle(), sMenu.toString(), " Validate Page Load");
+		System.out.println(driver.getTitle() + " page is Loaded..");
+	}
+	
+	public void selectMenu(String mMenu, String sMenu) throws InterruptedException {
+		mainMenu = By.xpath("//*[contains(text(),'" + mMenu.toString() + "')]");
+		//(//*[@class='select'])[2]
+				
+		subMenu = By.xpath("//a[contains(text(),'" + sMenu.toString() + "')]");
+
+		driver.findElement(menu).click();
+		System.out.println(mainMenu.toString());
 		driver.findElement(mainMenu).click();
+		System.out.println(subMenu.toString());
 		driver.findElement(subMenu).click();
 		Assert.assertEquals(driver.getTitle(), sMenu.toString(), " Validate Page Load");
 		System.out.println(driver.getTitle() + " page is Loaded..");

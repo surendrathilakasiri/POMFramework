@@ -1,6 +1,0 @@
-com\BussinessComponents\bc_OpenApp.class
-com\IOUtils\PropertyHandler.class
-testSuites\TestBase.class
-common\BrowserUtil.class
-com\BussinessComponents\bc_OKTALogin.class
-testSuites\TS_SmokeTest.class
