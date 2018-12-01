@@ -7,6 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import com.IOUtils.PropertyHandler;
+import com.IOUtils.ReadExcel;
 
 public class TestBase {
 	public WebDriver driver;

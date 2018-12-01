@@ -8,15 +8,16 @@ public class TS_SmokeTest extends TestBase {
 	// Test Data
 	private String username = new String("Loadt01");
 	private String password = new String("Global01");
-	private String URL = new String("https://aenetworks.oktapreview.com/login/default");
+	//private String URL = new String("https://aenetworks.oktapreview.com/login/default");
 	private String appName = new String("Bridge-QA2");
 
 	@Test
 	public void tc_LoginTest() throws Exception {
+		
+		
 		// Open the browser with provided URL
 		BrowserUtil browser = new BrowserUtil(driver);
-		browser.openURL(URL);
-
+		browser.openURL("tc_LoginTest");
 		// Sign Into OKTA Home Page
 		bc_OKTALogin oKTALogin = new bc_OKTALogin(driver);
 		oKTALogin.LoginOKTA(username, password);
@@ -65,4 +66,5 @@ public class TS_SmokeTest extends TestBase {
 		selectMenu.selectMenu("       Sales", "Projections", 1);
 
 	}
+	
 }
