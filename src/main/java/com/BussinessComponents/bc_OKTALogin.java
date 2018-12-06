@@ -3,10 +3,13 @@
  */
 package com.BussinessComponents;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import com.IOUtils.ReadExcel;
 import com.thoughtworks.selenium.Wait;
 
 /**
@@ -27,16 +30,19 @@ private By signIn =By.xpath("//*[@id=\"okta-signin-submit\"]");
 	}
 		
 	// Login to OKTA
-	public void LoginOKTA(String username, String password)
+	public void LoginOKTA(String sName) throws IOException
 	{
-		driver.findElement(userName).sendKeys(username);
-		driver.findElement(passWord).sendKeys(password);
+
+		//ReadExcel readexcel=new ReadExcel();
+		ReadExcel.openFile("TestData.xlsx",getClass().getSimpleName() );
+		
+		driver.findElement(userName).sendKeys(ReadExcel.readData(sName, "UserName"));
+		driver.findElement(passWord).sendKeys(ReadExcel.readData(sName, "Password"));
 		driver.findElement(signIn).click();
 		String title1 = driver.getTitle();
 		System.out.println(title1);
 		Assert.assertEquals(title1, "AE Networks - Preview - Sign In");
-		driver.findElement(By.xpath("//*[@class='logo']")).click();
-		
+		Assert.assertNotNull(driver.findElement(By.xpath("//*[@class='logo']")));	
 
 	}
 

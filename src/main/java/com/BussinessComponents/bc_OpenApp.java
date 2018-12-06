@@ -5,6 +5,7 @@ package com.BussinessComponents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -25,7 +26,7 @@ public class bc_OpenApp {
 		if (appName.compareToIgnoreCase("Bridge-QA2") == 0) {
 			driver.findElement(app).click();
 			//WebDriverWait wait=new WebDriverWait(driver,10);
-			//wait.wait();
+			//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@alt='bridge logo text image']")));
 			Thread.sleep(8000);
 			
 			System.out.println("Bridge QA2 is Loading...");
@@ -38,6 +39,7 @@ public class bc_OpenApp {
 														// found window handle
 
 			}
+			Thread.sleep(8000);
 			System.out.println(driver.getTitle());
 			Assert.assertEquals(driver.getTitle(), "Bridge :: Home", " Bridge Home Page is Loaded");
 		} else {

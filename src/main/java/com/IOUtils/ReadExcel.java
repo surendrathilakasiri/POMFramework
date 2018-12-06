@@ -37,13 +37,10 @@ public class ReadExcel {
 		int r = 0, c = 0;
 		int lastRow = sheet.getLastRowNum();
 		int lastCol = sheet.getRow(0).getLastCellNum();
-		rw = sheet.getRow(1);
-		cell = rw.getCell(0);
+		rw = sheet.getRow(r);
+		cell = rw.getCell(c);
 
 		// Find the Correct Row
-		r = 1;
-		System.out.println(" Column " + columnName);
-		System.out.println(" Row " + scenarioName);
 		while (cellToString(cell).equalsIgnoreCase(scenarioName) == false && r <= lastRow) {
 			rw = sheet.getRow(r);
 			cell = rw.getCell(0);
@@ -56,7 +53,7 @@ public class ReadExcel {
 		}
 
 		rw = sheet.getRow(r - 1);
-		cell = rw.getCell(c - 2);
+		cell = rw.getCell(c - 1);
 		System.out.println(cellToString(cell));
 		return cellToString(cell);
 	}

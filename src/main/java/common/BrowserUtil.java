@@ -21,7 +21,7 @@ public class BrowserUtil {
 	public void openURL(String sName) throws IOException {
 		//ReadExcel readexcel=new ReadExcel();
 		ReadExcel.openFile("TestData.xlsx",getClass().getSimpleName() );
-		String sURL=ReadExcel.readData(sName, "UserName");
+		String sURL=ReadExcel.readData(sName, "URL");
 	    driver.get(sURL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

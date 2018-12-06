@@ -1,5 +1,8 @@
 package testSuites;
 
+import java.io.IOException;
+
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.BussinessComponents.*;
 import common.BrowserUtil;
@@ -8,19 +11,26 @@ public class TS_SmokeTest extends TestBase {
 	// Test Data
 	private String username = new String("Loadt01");
 	private String password = new String("Global01");
-	//private String URL = new String("https://aenetworks.oktapreview.com/login/default");
 	private String appName = new String("Bridge-QA2");
 
+	@BeforeTest
+	public void Navigate() throws IOException{
+
+			driver.navigate().refresh();
+
+	}
+	
 	@Test
 	public void tc_LoginTest() throws Exception {
 		
 		
 		// Open the browser with provided URL
 		BrowserUtil browser = new BrowserUtil(driver);
-		browser.openURL("tc_LoginTest");
+		browser.openURL(Thread.currentThread().getStackTrace()[1].getMethodName());
+		
 		// Sign Into OKTA Home Page
 		bc_OKTALogin oKTALogin = new bc_OKTALogin(driver);
-		oKTALogin.LoginOKTA(username, password);
+		oKTALogin.LoginOKTA(Thread.currentThread().getStackTrace()[1].getMethodName());
 
 		// Launch Bridge QA1 app
 		bc_OpenApp openApp = new bc_OpenApp(driver);
@@ -31,11 +41,12 @@ public class TS_SmokeTest extends TestBase {
 	public void tc_AccountMaintenance() throws Exception {
 		// Open the browser with provided URL
 		BrowserUtil browser = new BrowserUtil(driver);
-		browser.openURL(URL);
+		browser.openURL(Thread.currentThread().getStackTrace()[1].getMethodName());
 
 		// Sign Into OKTA Home Page
 		bc_OKTALogin oKTALogin = new bc_OKTALogin(driver);
-		oKTALogin.LoginOKTA(username, password);
+		oKTALogin.LoginOKTA(Thread.currentThread().getStackTrace()[1].getMethodName());
+		//oKTALogin.LoginOKTA(username, password);
 
 		// Launch Bridge QA1 app
 		bc_OpenApp openApp = new bc_OpenApp(driver);
@@ -43,7 +54,7 @@ public class TS_SmokeTest extends TestBase {
 
 		// Select a sub Menu
 		bc_SelectSubMenu selectMenu = new bc_SelectSubMenu(driver);
-		selectMenu.selectMenu("Sales Operations", "Account Maintenance");
+		selectMenu.selectMenu(Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
 
@@ -51,11 +62,11 @@ public class TS_SmokeTest extends TestBase {
 	public void tc_SalesProjections() throws Exception {
 		// Open the browser with provided URL
 		BrowserUtil browser = new BrowserUtil(driver);
-		browser.openURL(URL);
+		browser.openURL(Thread.currentThread().getStackTrace()[1].getMethodName());
 
 		// Sign Into OKTA Home Page
 		bc_OKTALogin oKTALogin = new bc_OKTALogin(driver);
-		oKTALogin.LoginOKTA(username, password);
+		oKTALogin.LoginOKTA(Thread.currentThread().getStackTrace()[1].getMethodName());
 
 		// Launch Bridge QA1 app
 		bc_OpenApp openApp = new bc_OpenApp(driver);
@@ -63,7 +74,7 @@ public class TS_SmokeTest extends TestBase {
 
 		// Select a sub Menu
 		bc_SelectSubMenu selectMenu = new bc_SelectSubMenu(driver);
-		selectMenu.selectMenu("       Sales", "Projections", 1);
+		selectMenu.selectMenuIndex(Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
 	
