@@ -5,17 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
 import com.IOUtils.PropertyHandler;
-import com.IOUtils.ReadExcel;
 
 public class TestBase {
 	public WebDriver driver;
 	private String browser;
-
+	public final String METHOD_NAME="Thread.currentThread().getStackTrace()[1].getMethodName()";
+	
 	@BeforeTest
 	public void setup() throws Exception {
-		System.out.println("Test Case is Started");
+		System.out.println(METHOD_NAME+ " Test Case is Started");
 		PropertyHandler properties = new PropertyHandler("runtime.properties");
 		browser = properties.getRuntimeProperty("BROWSER");
 

@@ -18,7 +18,6 @@ public class ReadExcel {
 	private static InputStream file;
 	private static XSSFWorkbook workbook;
 	private static XSSFSheet sheet;
-	private static int rowIndex, cellIndex;
 	private static XSSFCell cell;
 
 	public static void openFile(String path, String sheetName) throws IOException {

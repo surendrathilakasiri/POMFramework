@@ -5,8 +5,6 @@ package com.BussinessComponents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 /**
@@ -14,21 +12,17 @@ import org.testng.Assert;
  */
 public class bc_OpenApp {
 
-	private WebDriver driver;
-	private By app = By.xpath("//*[@alt=\"Graphic Link Bridge - QA2\"]");
-	private By logo = By.xpath("//*[@alt=\"bridge logo text image\"]");
+	private static By app = By.xpath("//*[@alt=\"Graphic Link Bridge - QA2\"]");
 
-	public bc_OpenApp(WebDriver driver) {
-		this.driver = driver;
-	}
 
-	public void openApp(String appName) throws Exception {
+	public static void openApp(WebDriver driver,String appName) throws Exception {
 		if (appName.compareToIgnoreCase("Bridge-QA2") == 0) {
 			driver.findElement(app).click();
-			//WebDriverWait wait=new WebDriverWait(driver,10);
-			//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@alt='bridge logo text image']")));
+			// WebDriverWait wait=new WebDriverWait(driver,10);
+			// wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@alt='bridge
+			// logo text image']")));
 			Thread.sleep(8000);
-			
+
 			System.out.println("Bridge QA2 is Loading...");
 			for (String winHandle : driver.getWindowHandles()) { // Gets the new
 																	// window

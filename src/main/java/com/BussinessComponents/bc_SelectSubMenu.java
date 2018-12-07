@@ -1,11 +1,9 @@
 package com.BussinessComponents;
 
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import com.IOUtils.ReadExcel;
 
 /**
@@ -13,41 +11,31 @@ import com.IOUtils.ReadExcel;
  */
 public class bc_SelectSubMenu {
 
-	private WebDriver driver;
-	private By menu = By.xpath("//*[@id='menu-toggle']");
-	private By mainMenu;
-	private By subMenu;
-	String paget;
+	private static By menu = By.xpath("//*[@id='menu-toggle']");
+	private static By mainMenu;
+	private static By subMenu;
 
-	public bc_SelectSubMenu(WebDriver driver) {
-		this.driver = driver;
-	}
 
-	public void selectMenuIndex(String sName) throws InterruptedException, IOException {
+	public static void selectMenuIndex(WebDriver driver,String sName) throws InterruptedException, IOException {
+		ReadExcel.openFile("TestData.xlsx", bc_SelectSubMenu.class.getSimpleName());
 		mainMenu = By.xpath("//*[contains(text(),'" + ReadExcel.readData(sName, "MainMenu") + "')]");
 		subMenu = By.xpath("//a[contains(text(),'" + ReadExcel.readData(sName, "SubMenu") + "')]");
-
 		driver.findElement(menu).click();
-		System.out.println(mainMenu.toString());
-		int index=Integer.parseInt(ReadExcel.readData(sName, "Index"));
+		int index = Integer.parseInt(ReadExcel.readData(sName, "Index"));
 		driver.findElements(mainMenu).get(index).click();
-		System.out.println(subMenu.toString());
 		driver.findElement(subMenu).click();
 		Assert.assertEquals(driver.getTitle(), ReadExcel.readData(sName, "SubMenu"), " Validate Page Load");
 		System.out.println(driver.getTitle() + " page is Loaded..");
 	}
-	
-	
-	public void selectMenu(String sName) throws InterruptedException, IOException {
-		mainMenu = By.xpath("//*[contains(text(),'" + ReadExcel.readData(sName, "MainMenu") + "')]");	
-		subMenu = By.xpath("//a[contains(text(),'" + ReadExcel.readData(sName, "SubMenu") + "')]");
 
+	public static void selectMenu(WebDriver driver,String sName) throws InterruptedException, IOException {
+		ReadExcel.openFile("TestData.xlsx", bc_SelectSubMenu.class.getSimpleName());
+		mainMenu = By.xpath("//*[contains(text(),'" + ReadExcel.readData(sName, "MainMenu") + "')]");
+		subMenu = By.xpath("//a[contains(text(),'" + ReadExcel.readData(sName, "SubMenu") + "')]");
 		driver.findElement(menu).click();
-		System.out.println(mainMenu.toString());
 		driver.findElement(mainMenu).click();
-		System.out.println(subMenu.toString());
 		driver.findElement(subMenu).click();
-		Assert.assertEquals(driver.getTitle(), ReadExcel.readData(sName, "MainMenu"), " Validate Page Load");
+		Assert.assertEquals(driver.getTitle(), ReadExcel.readData(sName, "SubMenu"), " Validate Page Load");
 		System.out.println(driver.getTitle() + " page is Loaded..");
 	}
 

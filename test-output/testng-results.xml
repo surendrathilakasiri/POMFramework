@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="102596" started-at="2018-12-06T21:16:50Z" finished-at="2018-12-06T21:18:33Z">
+  <suite name="Default suite" duration-ms="90067" started-at="2018-12-07T21:23:00Z" finished-at="2018-12-07T21:24:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="102596" started-at="2018-12-06T21:16:50Z" finished-at="2018-12-06T21:18:33Z">
+    <test name="Default test" duration-ms="90067" started-at="2018-12-07T21:23:00Z" finished-at="2018-12-07T21:24:30Z">
       <class name="testSuites.TS_SmokeTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="setup" is-config="true" duration-ms="4813" started-at="2018-12-06T16:16:50Z" finished-at="2018-12-06T16:16:55Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="setup" is-config="true" duration-ms="5164" started-at="2018-12-07T16:23:00Z" finished-at="2018-12-07T16:23:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Navigate()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="Navigate" is-config="true" duration-ms="69" started-at="2018-12-06T16:16:55Z" depends-on-methods="testSuites.TestBase.setup" finished-at="2018-12-06T16:16:55Z">
+        <test-method status="PASS" signature="Navigate()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="Navigate" is-config="true" duration-ms="91" started-at="2018-12-07T16:23:05Z" depends-on-methods="testSuites.TestBase.setup" finished-at="2018-12-07T16:23:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Navigate -->
-        <test-method status="PASS" signature="tc_AccountMaintenance()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="tc_AccountMaintenance" duration-ms="44324" started-at="2018-12-06T16:16:55Z" finished-at="2018-12-06T16:17:39Z">
+        <test-method status="PASS" signature="tc_AccountMaintenance()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="tc_AccountMaintenance" duration-ms="33343" started-at="2018-12-07T16:23:05Z" finished-at="2018-12-07T16:23:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_AccountMaintenance -->
-        <test-method status="PASS" signature="closetab()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="closetab" is-config="true" duration-ms="132" started-at="2018-12-06T16:17:39Z" finished-at="2018-12-06T16:17:39Z">
+        <test-method status="PASS" signature="closetab()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="closetab" is-config="true" duration-ms="105" started-at="2018-12-07T16:23:38Z" finished-at="2018-12-07T16:23:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closetab -->
-        <test-method status="PASS" signature="tc_LoginTest()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="tc_LoginTest" duration-ms="23623" started-at="2018-12-06T16:17:39Z" finished-at="2018-12-06T16:18:03Z">
+        <test-method status="PASS" signature="tc_LoginTest()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="tc_LoginTest" duration-ms="23036" started-at="2018-12-07T16:23:38Z" finished-at="2018-12-07T16:24:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_LoginTest -->
-        <test-method status="PASS" signature="closetab()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="closetab" is-config="true" duration-ms="88" started-at="2018-12-06T16:18:03Z" finished-at="2018-12-06T16:18:03Z">
+        <test-method status="PASS" signature="closetab()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="closetab" is-config="true" duration-ms="82" started-at="2018-12-07T16:24:01Z" finished-at="2018-12-07T16:24:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closetab -->
-        <test-method status="PASS" signature="tc_SalesProjections()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="tc_SalesProjections" duration-ms="27361" started-at="2018-12-06T16:18:03Z" finished-at="2018-12-06T16:18:30Z">
+        <test-method status="PASS" signature="tc_SalesProjections()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="tc_SalesProjections" duration-ms="26009" started-at="2018-12-07T16:24:02Z" finished-at="2018-12-07T16:24:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_SalesProjections -->
-        <test-method status="PASS" signature="closetab()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="closetab" is-config="true" duration-ms="105" started-at="2018-12-06T16:18:30Z" finished-at="2018-12-06T16:18:31Z">
+        <test-method status="PASS" signature="closetab()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="closetab" is-config="true" duration-ms="83" started-at="2018-12-07T16:24:28Z" finished-at="2018-12-07T16:24:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closetab -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="teardown" is-config="true" duration-ms="2061" started-at="2018-12-06T16:18:31Z" finished-at="2018-12-06T16:18:33Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testSuites.TS_SmokeTest@4f933fd1]" name="teardown" is-config="true" duration-ms="2120" started-at="2018-12-07T16:24:28Z" finished-at="2018-12-07T16:24:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
