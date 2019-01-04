@@ -1,11 +1,18 @@
 package testSuites;
 
 import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.BussinessComponents.*;
-import common.BrowserUtil;
+import com.aventstack.extentreports.Status;
 
+import common.BrowserUtil;
+@Listeners(TestBase.class)
 public class TS_SmokeTest extends TestBase {
 	private String appName = "Bridge-QA2";
 
@@ -14,8 +21,10 @@ public class TS_SmokeTest extends TestBase {
 		driver.navigate().refresh();
 	}
 
-	@Test
+	@Test (priority=1)
 	public void tc_LoginTest() throws Exception {
+		//Create Test Case
+		test = extent.createTest(" Test " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		// Open the browser with provided URL
 		BrowserUtil.openURL(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
 
@@ -24,11 +33,14 @@ public class TS_SmokeTest extends TestBase {
 
 		// Launch Bridge QA1 app
 		bc_OpenApp.openApp(driver, appName);
+		//System.exit(0);
 	}
 
-	@Test
+	@Test (priority=2)
 	public void tc_AccountMaintenance() throws Exception {
-
+		//Create Test Case
+		test = extent.createTest(" Test " + Thread.currentThread().getStackTrace()[1].getMethodName());
+		test.log(Status.PASS,"Test111");
 		// Open the browser with provided URL
 		BrowserUtil.openURL(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
 
@@ -40,11 +52,16 @@ public class TS_SmokeTest extends TestBase {
 
 		// Select a sub Menu
 		bc_SelectSubMenu.selectMenu(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
+		Assert.fail();
+
 
 	}
 
-	@Test
+	@Test (priority=3)
 	public void tc_SalesProjections() throws Exception {
+		
+		//Create Test Case
+		test = extent.createTest(" Test " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		// Open the browser with provided URL
 		BrowserUtil.openURL(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
 
