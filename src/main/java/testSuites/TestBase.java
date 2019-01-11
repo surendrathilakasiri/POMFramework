@@ -58,12 +58,14 @@ public class TestBase implements ITestListener{
 
 	@AfterMethod
 	public void cleanup(ITestResult result) throws IOException {
-/*
+
 		if (result.getStatus() == ITestResult.FAILURE) {
 			test.log(Status.FAIL, "Test Case Failed is " + result.getThrowable());
 			File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(f, new File(System.getProperty("user.dir") + "\\test-output\\Error.png"));
 			test.fail("Error Screen Print : ", MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + "\\test-output\\Error.png").build());
+		}
+			/*
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			test.log(Status.SKIP, "Test Case Skipped is " + result.getName());
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
@@ -91,22 +93,21 @@ public class TestBase implements ITestListener{
 	}
 
 	//@Override
-	public void onTestSuccess(ITestResult result) {
-		
-		//if (result.getStatus() == ITestResult.SUCCESS) {
-		//	test.log(Status.PASS, "Test Case Passed is " + result.getName());
-		//}
-		test.log(Status.PASS, "Test Case Passed is " + result.getName());
-		System.out.println("Test Case Passed is " + result.getStatus());
-				 
+	public void onTestSuccess(ITestResult result) {		
+		test.log(Status.PASS, "Test Case Passed : " + result.getName());
+	 
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		test.log(Status.FAIL, "Test Case Failed is " + result.getThrowable());
+		/*
+		test.log(Status.FAIL, "Test Case Failed : "+ result.getName()+" due to " + result.getThrowable());
+		System.out.println("aaafffff");
 		File f = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		System.out.println("bbbfffff");
 		try {
 			FileUtils.copyFile(f, new File(System.getProperty("user.dir") + "\\test-output\\Error.png"));
+		System.out.println("ffffffff");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -114,7 +115,7 @@ public class TestBase implements ITestListener{
 			test.fail("Error Screen Print : ", MediaEntityBuilder.createScreenCaptureFromPath(System.getProperty("user.dir") + "\\test-output\\Error.png").build());
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	@Override
@@ -131,15 +132,15 @@ public class TestBase implements ITestListener{
 
 	@Override
 	public void onStart(ITestContext context) {
-		System.out.println("2********+++++++++++**********");
 		context.setAttribute("WebDriver", this.driver);
-		System.out.println("I am in onStart method " + context.getName());
+		System.out.println("Test Case Started" + context.getName());
 		
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		//extent.flush();
+		extent.flush();
+	       
 		
 	}
 }
