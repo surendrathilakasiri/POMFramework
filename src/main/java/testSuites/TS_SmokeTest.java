@@ -29,10 +29,10 @@ public class TS_SmokeTest extends TestBase {
 		BrowserUtil.openURL(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 		// Sign Into OKTA Home Page
-		bc_OKTALogin.LoginOKTA(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
+		bc_OKTALogin.LoginOKTA(driver, Thread.currentThread().getStackTrace()[1].getMethodName(),test);
 
 		// Launch Bridge QA1 app
-		bc_OpenApp.openApp(driver, appName);
+		bc_OpenApp.openApp(driver, appName,test);
 		//System.exit(0);
 	}
 
@@ -45,10 +45,10 @@ public class TS_SmokeTest extends TestBase {
 		BrowserUtil.openURL(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 		// Sign Into OKTA Home Page
-		bc_OKTALogin.LoginOKTA(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
+		bc_OKTALogin.LoginOKTA(driver, Thread.currentThread().getStackTrace()[1].getMethodName(),test);
 
 		// Launch Bridge QA1 app
-		bc_OpenApp.openApp(driver, appName);
+		bc_OpenApp.openApp(driver, appName,test);
 
 		// Select a sub Menu
 		bc_SelectSubMenu.selectMenu(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -66,10 +66,10 @@ public class TS_SmokeTest extends TestBase {
 		BrowserUtil.openURL(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 		// Sign Into OKTA Home Page
-		bc_OKTALogin.LoginOKTA(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
+		bc_OKTALogin.LoginOKTA(driver, Thread.currentThread().getStackTrace()[1].getMethodName(),test);
 
 		// Launch Bridge QA1 app
-		bc_OpenApp.openApp(driver, appName);
+		bc_OpenApp.openApp(driver, appName,test);
 
 		// Select a sub Menu
 		bc_SelectSubMenu.selectMenuIndex(driver, Thread.currentThread().getStackTrace()[1].getMethodName());
