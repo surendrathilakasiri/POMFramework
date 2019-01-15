@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.IOUtils.ReadExcel;
@@ -21,10 +23,10 @@ public class bc_OKTALogin {
 	private static By userName = By.name("username");
 	private static By passWord = By.name("password");
 	private static By signIn = By.xpath("//*[@id=\"okta-signin-submit\"]");
-
+	private static By logo = By.xpath("//*[@class='logo']");
 
 	// Login to OKTA
-	public static void LoginOKTA(WebDriver driver,String sName, ExtentTest test) throws IOException {
+	public static void LoginOKTA(WebDriver driver, String sName, ExtentTest test) throws IOException {
 
 		// ReadExcel readexcel=new ReadExcel();
 		ReadExcel.openFile("TestData.xlsx", bc_OKTALogin.class.getSimpleName());
@@ -32,20 +34,15 @@ public class bc_OKTALogin {
 		driver.findElement(passWord).sendKeys(ReadExcel.readData(sName, "Password"));
 		driver.findElement(signIn).click();
 		String title1 = driver.getTitle();
-		System.out.println(title1);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.elementToBeClickable(logo));
 		Assert.assertEquals(title1, "AE Networks - Preview - Sign In");
-		Assert.assertNotNull(driver.findElement(By.xpath("//*[@class='logo']")));
-		if (driver.findElement(By.xpath("//*[@class='logo']")).isDisplayed())
-		{
-			test.log(Status.PASS, "Bridge Home Page is Loaded ");
+		Assert.assertNotNull(driver.findElement(logo));
+		if (driver.findElement(logo).isDisplayed()) {
+			test.log(Status.PASS, "OKTA Home Page is Loaded ");
+		} else {
+			test.log(Status.FAIL, "OKTA Home Page is NOT Loaded ");
 		}
-		else
-		{
-			test.log(Status.FAIL, "Bridge Home Page is NOT Loaded ");
-		}
-		
-		
-		
 
 	}
 

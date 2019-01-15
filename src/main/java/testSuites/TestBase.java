@@ -52,7 +52,7 @@ public class TestBase implements ITestListener{
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
-		System.out.println("1********+++++++++++**********");
+
 
 	}
 
