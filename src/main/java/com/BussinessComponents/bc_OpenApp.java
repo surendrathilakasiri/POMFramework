@@ -18,7 +18,7 @@ import com.aventstack.extentreports.Status;
 public class bc_OpenApp {
 
 	private static By app = By.xpath("//*[@alt=\"Graphic Link Bridge - QA2\"]");
-	private static By bridgeLogo = By.xpath("//img[@class='loader-img float-left']");
+	private static By bridgeLogo = By.xpath("//img[@alt='Bridge Logo']");
 
 	public static void openApp(WebDriver driver, String appName, ExtentTest test) throws Exception {
 		if (appName.compareToIgnoreCase("Bridge-QA2") == 0) {
