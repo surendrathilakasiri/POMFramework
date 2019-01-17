@@ -8,9 +8,8 @@ import com.IOUtils.ReadExcel;
 
 public class BrowserUtil {
 
-
 	// without objects
-	public static void openURL(WebDriver driver,String sName) throws IOException {
+	public static void openURL(WebDriver driver, String sName) throws IOException {
 		// ReadExcel readexcel=new ReadExcel();
 		ReadExcel.openFile("TestData.xlsx", BrowserUtil.class.getSimpleName());
 		String sURL = ReadExcel.readData(sName, "URL");
